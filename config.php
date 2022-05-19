@@ -18,6 +18,8 @@ require_once 'controllers/XtraController.php';
 require_once 'controllers/SubjectController.php';
 require_once 'controllers/StrandController.php';
 require_once 'controllers/FIleController.php';
+require_once 'controllers/GradeController.php';
+require_once 'controllers/DBFileController.php';
 
 /** ENUMS */
 require_once 'enums/Account.php';

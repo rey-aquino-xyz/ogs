@@ -86,3 +86,31 @@ if (isset($_POST['deleteexc'])) {
         throw $th;
     }
 }
+
+if(isset($_POST['exportexc'])){
+    $File = FileController::GetById(base64_decode($_POST['id']));
+    $Grade = new Grade();
+    $Grade->GradeLevelId = $File->GradeLevelId;
+    $Grade->StrandId = $File->StrandId;
+    $Grade->SemesterId = $File->SemesterId;
+    $Grade->QuarterId = $File->QuarterId;
+    $Grade->SubjectId = $File->SubjectId;
+    $Grade->SY = $File->SY;
+
+    if ($xlsx = SimpleXLSX::parse('../assets/files/' . $File->Filename)) {
+        $i = 0;
+        foreach ($xlsx->rows() as $elt) {
+            if ($i == 0) {
+                echo "<tr><th>" . $elt[0] . "</th><th>" . $elt[1] . "</th><th>" . $elt[2] . "</th></tr>";
+            } else {
+              $Grade->LRN = $elt[0];
+              $Grade->Grade = $elt[2];
+              GradeController::Insert($Grade);
+            }
+            $i++;
+        }
+        DbFileController::Insert($File->Id);
+    } else {
+        echo SimpleXLSX::parseError();
+    }
+}

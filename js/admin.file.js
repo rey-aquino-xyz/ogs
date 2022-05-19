@@ -32,19 +32,33 @@ $(document).ready(function () {
         $("#exc-content").load("../../includes/uploadfile.php", { readexc: "POST", id: id });
     });
 
-    $("[name='deletefilelink']").on('click', function(event){
+    $("[name='deletefilelink']").on('click', function (event) {
         event.preventDefault();
         var id = $(this).attr('href');
         $.ajax({
             url: '../../includes/uploadfile.php',
-            data: {deleteexc: 'POST', id: id},
+            data: { deleteexc: 'POST', id: id },
             type: 'POST',
-            success: function(r){
-                if(r == "t"){
+            success: function (r) {
+                if (r == "t") {
                     $("#admin-content").load("../../views/admin/files.php");
                 }
-                
+
             }
         });
+    });
+
+    $("[name='savefilelink']").on('click', function (e) {
+        e.preventDefault();
+        var id = $(this).attr('href');
+        $.ajax({
+            url: '../../includes/uploadfile.php',
+            data: { exportexc: 'POST', id: id },
+            type: 'POST',
+            success: function (r) {
+                $("#admin-content").load("../../views/admin/files.php");
+            }
+        });
+
     });
 });

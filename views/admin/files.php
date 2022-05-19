@@ -14,7 +14,7 @@ if (isset($_SESSION['accountid'])) {
 
 $SubjectLists = SubjectController::Get();
 $StrandLists  = StrandController::Get();
-$FileLists = FileController::Get();
+$FileLists    = FileController::Get();
 ?>
 <script src="../../js/admin.file.js"></script>
 
@@ -42,45 +42,49 @@ $FileLists = FileController::Get();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($FileLists as $f): ?>
+                <?php foreach ($FileLists as $f): ?>
                 <tr class="fw-normal">
                     <td>
-                        <?= Enum_GradeLevel::ParseId($f['gradelevelid']); ?>
+                        <?=Enum_GradeLevel::ParseId($f['gradelevelid']);?>
                         </td1>
 
                         <?php $Strand = StrandController::GetById($f['strandid']);?>
                     <td>
-                        <?= $Strand->Name; ?>
+                        <?=$Strand->Name;?>
                     </td>
 
-                    <?php $Subject = SubjectController::GetById($f['subjectid']) ?>
+                    <?php $Subject = SubjectController::GetById($f['subjectid'])?>
                     <td>
-                        <?= $Subject->Name ?>
+                        <?=$Subject->Name?>
+                        <?php if(DbFileController::IsExistFile($f['id'])): ?>
                         <span class="badge rounded-pill text-bg-secondary">DB</span>
+                        <?php endif; ?>
                     </td>
 
                     <td>
-                        <?= Enum_Semester::ParseSem($f['semesterid']); ?>
+                        <?=Enum_Semester::ParseSem($f['semesterid']);?>
                     </td>
 
                     <td>
-                        <?= Enum_Quarter::ParseQ($f['quarterid']); ?>
+                        <?=Enum_Quarter::ParseQ($f['quarterid']);?>
                     </td>
                     <td>
-                        <?= $f['sy']; ?>
+                        <?=$f['sy'];?>
                     </td>
                     <td>
                         <div class="d-flex justify-content-between">
-                            <a href="<?= base64_encode($f['id']); ?>" name="viewfilelink"
+                            <a href="<?=base64_encode($f['id']);?>" name="viewfilelink"
                                 class="text-decoration-none">View</a>
-                            <a href="<?= base64_encode($f['id']); ?>" name="savefilelink"
+                            <?php if (!DbFileController::IsExistFile($f['id'])): ?>
+                            <a href="<?=base64_encode($f['id']);?>" name="savefilelink"
                                 class="text-decoration-none text-success">Save to DB</a>
-                            <a href="<?= base64_encode($f['id']); ?>" name="deletefilelink"
+                            <?php endif;?>
+                                <a href="<?=base64_encode($f['id']);?>" name="deletefilelink"
                                 class="text-decoration-none  text-danger">Delete File</a>
                         </div>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+                <?php endforeach;?>
             </tbody>
         </table>
     </div>
@@ -114,22 +118,22 @@ $FileLists = FileController::Get();
                         <div class="form-floating">
                             <select name="strandid" class="form-select mb-1" id="floatingSelect"
                                 aria-label="Floating label select example">
-                                <?php foreach($StrandLists as $s): ?>
-                                <option value="<?= $s['id']; ?>">
-                                    <?= $s['name']; ?>
+                                <?php foreach ($StrandLists as $s): ?>
+                                <option value="<?=$s['id'];?>">
+                                    <?=$s['name'];?>
                                 </option>
-                                <?php endforeach; ?>
+                                <?php endforeach;?>
                             </select>
                             <label for="floatingSelect">Strand</label>
                         </div>
                         <div class="form-floating">
                             <select name="subjectid" class="form-select mb-1" id="floatingSelect"
                                 aria-label="Floating label select example">
-                                <?php foreach($SubjectLists as $s): ?>
-                                <option value="<?= $s['id']; ?>">
-                                    <?= $s['name']; ?>
+                                <?php foreach ($SubjectLists as $s): ?>
+                                <option value="<?=$s['id'];?>">
+                                    <?=$s['name'];?>
                                 </option>
-                                <?php endforeach; ?>
+                                <?php endforeach;?>
                             </select>
                             <label for="floatingSelect">Subject</label>
                         </div>
