@@ -20,18 +20,32 @@ class AccountController
         }
     }
 
-    public static function GetData(){
-        $sql="SELECT * FROM `account`";
+    public static function GetData()
+    {
+        $sql = "SELECT * FROM `account`";
         return DBx::GetData($sql);
     }
 
-    public static function IsAuthenticate($username, $password){
-        foreach(AccountController::GetData() as $r){
-            if($r['username'] == $username){
-                if($r['password']== $password){
+    public static function IsAuthenticate($username, $password)
+    {
+        foreach (AccountController::GetData() as $r) {
+            if ($r['username'] == $username) {
+                if ($r['password'] == $password) {
                     return true;
-                }else{ return false;}
-            }else{ return false;}
+                } else {return false;}
+            } else {return false;}
+        }
+    }
+
+    public static function SeedAccount()
+    {
+        if (!DBx::GetRowCount("SELECT * FROM `account` WHERE typeid=?", [Enum_AccountType::Admin()]) > 0) {
+            $a                = new Account();
+            $a->Username      = 'admin';
+            $a->Password      = 'admin12345';
+            $a->AccountTypeId = Enum_AccountType::Admin();
+
+            AccountController::Insert($a);
         }
     }
 }

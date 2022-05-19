@@ -1,3 +1,11 @@
+
+<?php
+require_once 'config.php';
+
+
+AccountController::SeedAccount();
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
 
