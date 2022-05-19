@@ -76,12 +76,13 @@ if (isset($_POST['readexc'])) {
 
 if (isset($_POST['deleteexc'])) {
     $File = FileController::GetById(base64_decode($_POST['id']));
-
-    if (unlink('../assets/files/' . $File->Filename)) {
-        if (FileController::Delete($File->Id)) {
-            echo "t";
+  
+    try {
+        if (unlink('../assets/files/' . $File->Filename)) {
+            FileController::Delete($File->Id);
         }
-    } else {
-        echo "Something went wrong";
+        echo "t";
+    } catch (\Throwable $th) {
+        throw $th;
     }
 }
