@@ -11,14 +11,15 @@ class StudentController
             `lastname`,
             `lrn`,
             `sex`,
-            `dib`
+            `dib`,
+            `lrnstatus`
         )
         VALUES(
-           ?,?,?,?,?
+           ?,?,?,?,?,?
         )";
 
         try {
-            DBx::ExecuteCommand($sql, [$m->Firstname, $m->Lastname, $m->LRN, $m->Gender, $m->DOB]);
+            DBx::ExecuteCommand($sql, [$m->Firstname, $m->Lastname, $m->LRN, $m->Gender, $m->DOB, $m->LRNStatus]);
             return true;
         } catch (\Throwable $th) {
             return false;
@@ -61,5 +62,16 @@ class StudentController
 
     public static function GetData(){
         return DBx::GetData("SELECT * FROM `student`");
+    }
+
+    public static function UpdateLRNStatus($lrn, $status){
+        $sql = "UPDATE `student` SET `lrnstatus` = ? WHERE `lrn`=?";
+        try {
+            DBx::ExecuteCommand($sql, [$status, $lrn]);
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+            throw $th;
+        }
     }
 }
