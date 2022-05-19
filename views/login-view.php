@@ -8,9 +8,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         .form-signin {
             max-width: 330px;
@@ -33,23 +31,26 @@
             border-top-right-radius: 0;
         }
     </style>
+    <script type="application/javascript" src="../js/login.js"></script>
 </head>
 
 <body>
-<br><br><br>
+    <br><br><br>
     <main class="form-signin w-100 m-auto">
-        <form class="text-center">
+        <form class="text-center" name="form-login">
             <a href="/ogs/">
                 <img class="mb-4" src="../assets/school_logo.jpg" alt="" width="75" height="75">
             </a>
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username"
+                    required>
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+                    required>
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -59,10 +60,8 @@
                     Don't have account?<a href="">Create One!</a>
                 </label>
             </div>
-            <!--
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-            -->
         </form>
+        <p id="login-msg" class="text-danger"></p>
     </main>
 </body>
 

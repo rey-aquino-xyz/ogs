@@ -80,13 +80,8 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
                         </ul>
                         <div id="accountNav">
                             <ul class="navbar-nav me-auto">
-                                <li class="nav-item">
-                                    <a href="views/login-view.php" id="signinlink" class="nav-link">Sign In</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="btn btn-primary">Create Account</a>
-                                </li>
-                                <li class="nav-item">
+                                <?php if(isset($_SESSION['username'])): ?>
+                                    <li class="nav-item">
                                     <a href="" class="nav-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -94,9 +89,17 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
                                             <path fill-rule="evenodd"
                                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                         </svg>
-                                        @admin
+                                        <?= $_SESSION['username']; ?>
                                     </a>
                                 </li>
+                                <?php else: ?>
+                                    <li class="nav-item">
+                                    <a href="views/login-view.php" id="signinlink" class="nav-link">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="views/register-view.php" class="btn btn-primary">Create Account</a>
+                                </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
