@@ -1,10 +1,12 @@
-
 <?php
+session_start();
 require_once 'config.php';
 
-
 AccountController::SeedAccount();
-?>  
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,9 @@ AccountController::SeedAccount();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="assets/navbar.css">
     <link rel="stylesheet" href="assets/form.css">
 
@@ -29,15 +33,16 @@ AccountController::SeedAccount();
 background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
 ">
 
-<br>
+    <br>
     <main>
         <div class="container">
-            <nav class="navbar shadow-sm navbar-expand-md navbar-light bg-light rounded-4" aria-label="Fourth navbar example">
+            <nav class="navbar shadow-sm navbar-expand-md navbar-light bg-light rounded-4"
+                aria-label="Fourth navbar example">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                    <img src="assets/school_logo.jpg" alt="logo" width="45" height="45">        
-                    AMECI
-                </a>
+                        <img src="assets/school_logo.jpg" alt="logo" width="45" height="45">
+                        AMECI
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -80,6 +85,17 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
                                 </li>
                                 <li class="nav-item">
                                     <a href="" class="btn btn-primary">Create Account</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        </svg>
+                                        @admin
+                                    </a>
                                 </li>
                             </ul>
                         </div>

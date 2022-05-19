@@ -6,6 +6,7 @@ public $Id;
 public $Username;
 public $Password;
 public $AccountTypeId;
+public $StudentId;
 }
 
 

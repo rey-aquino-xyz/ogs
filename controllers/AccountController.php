@@ -5,13 +5,13 @@ class AccountController
 {
     public static function Insert(Account $a)
     {
-        $sql = "INSERT INTO `account`(`username`, `password`, `typeid`)
+        $sql = "INSERT INTO `account`(`username`, `password`, `typeid`, `studentid`)
         VALUES(
-            ?,?,?
+            ?,?,?,?
         )";
 
         try {
-            DBx::ExecuteCommand($sql, [$a->Username, $a->Password, $a->AccountTypeId]);
+            DBx::ExecuteCommand($sql, [$a->Username, $a->Password, $a->AccountTypeId, $a->StudentId]);
             return true;
         } catch (\Throwable $th) {
             return false;
