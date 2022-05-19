@@ -1,6 +1,7 @@
 <?php
 /** HELPERS */
 require_once 'helpers/DBx.php';
+include 'helpers/SimpleXLSX.php';
 
 /** MODELS */
 require_once 'models/Account.php';

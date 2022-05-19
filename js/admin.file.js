@@ -24,4 +24,31 @@ $(document).ready(function () {
         e.preventDefault();
         $("#uploadFileModal").modal('show');
     });
+
+    $("[name='viewfilelink']").on('click', function (event) {
+        event.preventDefault();
+        var id = $(this).attr('href');
+        $("#filereadModal").modal('show');
+        $("#exc-content").load("../../includes/uploadfile.php", { readexc: "POST", id: id });
+    });
+
+    $("[name='deletefilelink]").on('click', function(event){
+        event.preventDefault();
+        alert("helo");
+        var id = $(this).attr('href');
+        $.ajax({
+            url: '../../includes/uploadfile.php',
+            data: {deleteexc: 'POST', id:id},
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(r){
+                if(r == "t"){
+                    $("#admin-content").load("../../views/admin/files.php");
+                }else{
+                    alert(r);
+                }
+            }
+        });
+    });
 });

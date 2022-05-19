@@ -14,16 +14,16 @@ class Enum_Quarter{
     }
     public static function ParseQ($Q){
         if($Q == '1'){
-            return 'First Quarter';
+            return 'Q1';
         }
         if($Q == '2'){
-            return 'Second Quarter';
+            return 'Q2';
         }
         if($Q == '3'){
-            return 'Third Quarter';
+            return 'Q3';
         }
         if($Q == '4'){
-            return 'Fourth Quarter';
+            return 'Q4';
         }
     }
 }

@@ -9,10 +9,10 @@ class Enum_Semester{
     }
     public static function ParseSem($S){
        if($S == '1'){
-           return 'First Semester';
+           return 'First';
        }
        if($S == '2'){
-           return 'Second Semester';
+           return 'Second';
        }
     }
 }
