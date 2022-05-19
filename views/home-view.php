@@ -4,10 +4,10 @@
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">BE PART OF THE LONG TRADITION OF EXCELLENCE!</p>
         </div>
-        <div class="overflow-hidden" style="max-height: 70vh; width: 100%;">
+        <div>
             <div class="container px-5">
                 <img src="assets/school.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
-                    width="700" height="500" loading="lazy">
+                    width="100%" height="500" loading="lazy">
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="assets/navbar.css">
-    <script src="/ogs/js/main.js"></script>
+    <script type="application/javascript" src="/ogs/js/main.js"></script>
 
     <title>AMECI | Portal</title>
 
@@ -22,7 +22,7 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
 <br>
     <main>
         <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light bg-light rounded-4" aria-label="Fourth navbar example">
+            <nav class="navbar shadow-sm navbar-expand-md navbar-light bg-light rounded-4" aria-label="Fourth navbar example">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                     <img src="assets/school_logo.jpg" alt="logo" width="45" height="45">        
@@ -37,16 +37,16 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
                     <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0 align-items-center">
                             <li class="nav-item">
-                                <a class="nav-link" id="homelink" href="#">Home</a>
+                                <a class="nav-link" id="homelink" href="#Home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="gallerylink" href="#">Gallery</a>
+                                <a class="nav-link" id="gallerylink" href="#Gallery">Gallery</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="inquirelink" href="#">Inquire Grade</a>
+                                <a class="nav-link" id="inquirelink" href="#InquireGrade">Inquire Grade</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="" href="#">About</a>
+                                <a class="nav-link" id="aboutlink" href="#About">About</a>
                             </li>
                             <!--
                                 <li class="nav-item">
@@ -66,7 +66,7 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
                         <div id="accountNav">
                             <ul class="navbar-nav me-auto">
                                 <li class="nav-item">
-                                    <a href="" id="signinlink" class="nav-link">Signin</a>
+                                    <a href="views/login-view.php" id="signinlink" class="nav-link">Sign In</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="" class="btn btn-primary">Create Account</a>
