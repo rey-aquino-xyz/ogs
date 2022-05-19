@@ -28,12 +28,11 @@ class AccountController
 
     public static function IsAuthenticate($username, $password)
     {
-        foreach (AccountController::GetData() as $r) {
-            if ($r['username'] == $username) {
-                if ($r['password'] == $password) {
-                    return true;
-                } else {return false;}
-            } else {return false;}
+        if(DBx::GetRowCount("SELECT * FROM `account`  WHERE `username` =? AND `password` =?", [$username, $password]) > 0){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
@@ -47,5 +46,18 @@ class AccountController
 
             AccountController::Insert($a);
         }
+    }
+
+    public static function GetById($id){
+        $a = new Account();
+        foreach(AccountController::GetData() as $r){
+            if($r['id'] == $id){
+                $a->Id = $r['id'];
+                $a->Username = $r['username'];
+                $a->StudentId = $r['studentid'];
+                $a->AccountTypeId = $r['typeid'];
+            }
+        }
+        return $a;
     }
 }

@@ -7,6 +7,7 @@ class StudentController
     public static function Insert(Student $m)
     {
         $sql = "INSERT INTO `student`(
+            `id`,
             `fisrtname`,
             `lastname`,
             `lrn`,
@@ -15,11 +16,11 @@ class StudentController
             `lrnstatus`
         )
         VALUES(
-           ?,?,?,?,?,?
+           ?,?,?,?,?,?,?
         )";
 
         try {
-            DBx::ExecuteCommand($sql, [$m->Firstname, $m->Lastname, $m->LRN, $m->Gender, $m->DOB, $m->LRNStatus]);
+            DBx::ExecuteCommand($sql, [$m->Id, $m->Firstname, $m->Lastname, $m->LRN, $m->Gender, $m->DOB, $m->LRNStatus]);
             return true;
         } catch (\Throwable $th) {
             return false;
@@ -73,5 +74,14 @@ class StudentController
             return false;
             throw $th;
         }
+    }
+
+    public static function IsLRNExist($lrn){
+        if(DBx::GetRowCount("SELECT * FROM `student` WHERE `lrn`=?", [$lrn]) > 0){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }

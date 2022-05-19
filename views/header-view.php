@@ -82,7 +82,7 @@ background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
                             <ul class="navbar-nav me-auto">
                                 <?php if(isset($_SESSION['username'])): ?>
                                     <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="views/redirect.php" class="nav-link">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />

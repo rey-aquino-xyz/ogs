@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
-    <title>Document</title>
+    <title>AMECI | Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         .form-signin {
             max-width: 330px;
@@ -36,51 +34,56 @@
 </head>
 
 <body>
-    <br><br><br>
+    <br>
     <main class="form-signin w-100 m-auto">
-        <form class="text-center">
+        <form class="text-center" name="register-form" action="../includes/register.php" method="post">
             <a href="/ogs/">
                 <img class="mb-2" src="../assets/school_logo.jpg" alt="" width="75" height="75">
             </a>
             <h6>AMECI</h6>
             <h1 class="h3 mb-2 fw-normal">Create Account</h1>
-
-
+            <p class="text-danger" id="register-msg"></p>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Firstname">
-                <label for="floatingInput">Firstname</label>
+                <input type="text" class="form-control" id="floatingInputfn" placeholder="Firstname" name="firstname"
+                    required>
+                <label for="floatingInputfn">Firstname</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Lastname">
-                <label for="floatingInput">Lastname</label>
+                <input type="text" class="form-control" id="floatingInputln" placeholder="Lastname" name="lastname"
+                    required>
+                <label for="floatingInputln">Lastname</label>
             </div>
             <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                 </select>
                 <label for="floatingSelect">Gender</label>
             </div>
             <div class="form-floating">
-                <input type="date" class="form-control" id="floatingInput" placeholder="Date of Birth">
-                <label for="floatingInput">Date of Birth</label>
+                <input type="date" class="form-control" id="floatingInputDOB" placeholder="Date of Birth" name="dob"
+                    required>
+                <label for="floatingInputDOB">Date of Birth</label>
             </div>
             <br>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="LRN">
-                <label for="floatingInput">LRN</label>
+                <input type="text" class="form-control" id="floatingInputLRN" placeholder="LRN" name="lrn" required>
+                <label for="floatingInputLRN">LRN</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username"
+                    required>
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+                    required>
                 <label for="floatingPassword">Password</label>
             </div>
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
-            <div class="checkbox mt-3">
+            <div class="mt-3">
                 <label>
                     Already have account?<a href="login-view.php"> Sign In</a>
                 </label>
@@ -91,6 +94,9 @@
         </form>
     </main>
     <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

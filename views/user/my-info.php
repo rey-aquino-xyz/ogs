@@ -1,8 +1,4 @@
 <br><br>
-<style>
-
-
-</style>
 <div class="container col-10">
     <div class="card shadow-sm rounded-4 bg-light mb-3">
         <div class="card-body">
