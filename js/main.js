@@ -2,10 +2,12 @@ $(document).ready(function (e) {
 
     $("#content").load('views/home-view.php');
 
-    $("#inquirelink").on('click', function (e) {
+
+    $("#homelink").on('click', function (e) {
         e.preventDefault();
-        $("#content").load('views/grade/index.php');
+        $("#content").load('views/home-view.php');
     });
+
 
     /**
      *  $("#signinlink").on('click', function (e) {
@@ -14,9 +16,8 @@ $(document).ready(function (e) {
     });
      */
 
-    $("#aboutlink").on('click', function(e){
+    $("#aboutlink").on('click', function (e) {
         e.preventDefault();
-        $("#content").load('views/grade/grade.php');
     });
 
 

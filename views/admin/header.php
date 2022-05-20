@@ -21,8 +21,8 @@ if (isset($_SESSION['accountid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>AMECI | Admin</title>
     <script src="../../js/admin.js"></script>
     <style>
         body {
@@ -56,7 +56,7 @@ if (isset($_SESSION['accountid'])) {
                 </a>
                 <ul class="nav">
                     <li>
-                       <a href="#MyInfo" class="nav-link link-dark">My Info</a>
+                        <a href="#MyInfo" class="nav-link link-dark">My Info</a>
                     </li>
                     <li>
                         <a href="#Files" id="fileslink" class="nav-link link-dark">Files</a>

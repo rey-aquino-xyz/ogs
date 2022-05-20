@@ -28,5 +28,4 @@ require_once 'enums/Quarter.php';
 require_once 'enums/Semester.php';
 require_once 'enums/GradeLevel.php';
 
-
 ?>

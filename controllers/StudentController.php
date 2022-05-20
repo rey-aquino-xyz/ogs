@@ -1,4 +1,7 @@
 <?php
+
+use StudentController as GlobalStudentController;
+
 require_once __DIR__ . '/../config.php';
 
 class StudentController
@@ -65,6 +68,8 @@ class StudentController
         return DBx::GetData("SELECT * FROM `student`");
     }
 
+
+
     public static function UpdateLRNStatus($lrn, $status){
         $sql = "UPDATE `student` SET `lrnstatus` = ? WHERE `lrn`=?";
         try {
@@ -73,6 +78,19 @@ class StudentController
         } catch (\Throwable $th) {
             return false;
             throw $th;
+        }
+    }
+
+    public static function IsLRNLock($lrn){
+        foreach(GlobalStudentController::GetData() as $r){
+            if($r['lrn'] == $lrn){
+                if($r['lrnstatus'] == Enum_LRNStatus::Lock()){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
         }
     }
 
