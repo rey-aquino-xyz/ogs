@@ -60,4 +60,17 @@ class AccountController
         }
         return $a;
     }
+    public static function GetByStudentId($id){
+        $a = new Account();
+        foreach(AccountController::GetData() as $r){
+            if($r['studentid'] == $id){
+                $a->Id = $r['id'];
+                $a->Username = $r['username'];
+                $a->StudentId = $r['studentid'];
+                $a->Password = $r['password'];
+                $a->AccountTypeId = $r['typeid'];
+            }
+        }
+        return $a;
+    }
 }

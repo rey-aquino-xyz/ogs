@@ -1,7 +1,5 @@
 <?php
 
-use StudentController as GlobalStudentController;
-
 require_once __DIR__ . '/../config.php';
 
 class StudentController
@@ -64,13 +62,13 @@ class StudentController
         }
     }
 
-    public static function GetData(){
+    public static function GetData()
+    {
         return DBx::GetData("SELECT * FROM `student`");
     }
 
-
-
-    public static function UpdateLRNStatus($lrn, $status){
+    public static function UpdateLRNStatus($lrn, $status)
+    {
         $sql = "UPDATE `student` SET `lrnstatus` = ? WHERE `lrn`=?";
         try {
             DBx::ExecuteCommand($sql, [$status, $lrn]);
@@ -81,25 +79,40 @@ class StudentController
         }
     }
 
-    public static function IsLRNLock($lrn){
-        foreach(GlobalStudentController::GetData() as $r){
-            if($r['lrn'] == $lrn){
-                if($r['lrnstatus'] == Enum_LRNStatus::Lock()){
-                    return true;
-                }
-                else{
-                    return false;
-                }
+    public static function IsLRNLock($lrn)
+    {
+        $sql = "SELECT * FROM `student` WHERE `lrn`=?";
+        foreach (DBx::GetData($sql, [$lrn]) as $r) {
+            if ($r['lrnstatus'] == Enum_LRNStatus::Lock()) {
+                return true;
+            } else {
+                return false;
             }
         }
     }
 
-    public static function IsLRNExist($lrn){
-        if(DBx::GetRowCount("SELECT * FROM `student` WHERE `lrn`=?", [$lrn]) > 0){
+    public static function IsLRNExist($lrn)
+    {
+        if (DBx::GetRowCount("SELECT * FROM `student` WHERE `lrn`=?", [$lrn]) > 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
+    }
+
+    public static function GetByLRN($lrn){
+        $sql ="SELECT * FROM `student` WHERE `lrn`=?";
+        $s = new Student();
+        foreach(DBx::GetData($sql, [$lrn]) as $r){
+            $s->Id = $r['id'];
+            $s->Firstname = $r['fisrtname'];
+            $s->Lastname = $r['lastname'];
+            $s->LRN = $r['lrn'];
+            $s->Gender = $r['sex'];
+            $s->DOB = $r['dib'];
+            $s->LRNStatus = $r['lrnstatus'];
+        }
+        return $s;
     }
 }

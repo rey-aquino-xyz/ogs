@@ -44,4 +44,34 @@ class GradeController
         }
 
     }
+
+    public static function Get($lrn){
+        return DBx::GetData("SELECT * FROM grade WHERE lrn =? GROUP BY subjectid ", [$lrn]);
+    }
+    public static function IsLRNExist($lrn){
+        if(DBx::GetRowCount("SELECT * FROM `grade` WHERE `lrn`=?", [$lrn]) > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public static function GetGrade($lrn, $gradelevelid, $strandid, $semesterid, $quarterid, $subjectid, $sy){
+        return Dbx::GetData("SELECT grade FROM grade WHERE lrn =? && gradelevelid=? && strandid=? && semesterid=? && quarterid=? && subjectid=? && sy=?", [
+            $lrn,
+            $gradelevelid,
+            $strandid,
+            $semesterid,
+            $quarterid,
+            $subjectid,
+            $sy
+        ]);
+    }
+
+
+    public static function GetSY(){
+        $sql ="SELECT `sy` FROM `grade` GROUP BY `sy` ASC";
+        return DBx::GetData($sql);
+    }
 }

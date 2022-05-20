@@ -11,7 +11,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>AMECI | Portal</title>
-    
+    <script src="../../js/grade.js"></script>
 </head>
 <body style="background-color: #d2d8d6;
 background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
