@@ -48,14 +48,16 @@ AccountController::SeedAccount();
                             <li class="nav-item">
                                 <a class="nav-link" id="homelink" href="/ogs/">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="gallerylink" href="#Gallery">Gallery</a>
-                            </li>
+                            <!--
+                                <li class="nav-item">
+                                    <a class="nav-link" id="gallerylink" href="#Gallery">Gallery</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="aboutlink" href="#About">About</a>
+                                </li>
+                            -->
                             <li class="nav-item">
                                 <a class="nav-link" href="views/grade/">Inquire Grade</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="aboutlink" href="#About">About</a>
                             </li>
                             <!--
                                 <li class="nav-item">
