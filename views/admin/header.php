@@ -56,13 +56,10 @@ if (isset($_SESSION['accountid'])) {
                 </a>
                 <ul class="nav">
                     <li>
-                        <a href="#MyInfo" class="nav-link link-dark">My Info</a>
+                        <a href="#MyInfo" name="myInfoLink" class="nav-link link-dark">My Info</a>
                     </li>
                     <li>
                         <a href="#Files" id="fileslink" class="nav-link link-dark">Files</a>
-                    </li>
-                    <li>
-                        <a href="#Account" class="nav-link link-dark">Account</a>
                     </li>
                 </ul>
             </div>
