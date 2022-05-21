@@ -49,8 +49,6 @@ $(document).ready(function () {
             contentType: false,
             type: 'POST',
             success: function(r){
-                console.log(r);
-               
                 if(r == "t"){
                     $("[name='accountForm']")[0].reset();
                     $("#accountModal").modal('hide');
