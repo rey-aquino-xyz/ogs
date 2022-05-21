@@ -13,6 +13,4 @@
     <title>AMECI | Portal</title>
     <script src="../../js/grade.js"></script>
 </head>
-<body style="background-color: #d2d8d6;
-background-image: linear-gradient(315deg, #d2d8d6 0%, #dce8e0 74%);
-">
+<body style="background: #f8f8ff;">

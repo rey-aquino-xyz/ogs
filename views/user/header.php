@@ -34,7 +34,7 @@ if (isset($_SESSION['accountid'])) {
     <title>Document</title>
 </head>
 
-<body style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+<body style="background: #f8f8ff;">
     <nav class="navbar bg-light shadow-sm">
         <div class="container-fluid justify-content-between align-items-center">
             <a class="navbar-brand d-flex align-items-center" href="/ogs/">

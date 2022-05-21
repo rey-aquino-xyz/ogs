@@ -44,7 +44,7 @@ if (isset($_SESSION['accountid'])) {
     </style>
 </head>
 
-<body>
+<body style="background: #f8f8ff;">
     <nav class="navbar bg-light shadow-sm">
         <div class="container-fluid justify-content-between align-items-center">
             <div class="d-flex align-items-center">

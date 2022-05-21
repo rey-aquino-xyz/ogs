@@ -39,9 +39,10 @@
     <main class="form-signin w-100 m-auto">
         <form class="text-center" name="form-login">
             <a href="/ogs/">
-                <img class="mb-4" src="../assets/school_logo.jpg" alt="" width="75" height="75">
+                <img class="mb-2" src="../assets/school_logo.jpg" alt="" width="75" height="75">
             </a>
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <h6>AMECI</h6>
+            <h1 class="h3 mb-2 fw-normal">Sign In</h1>
 
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username"

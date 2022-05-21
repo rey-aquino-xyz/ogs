@@ -115,4 +115,18 @@ class StudentController
         }
         return $s;
     }
+    public static function GetById($id){
+        $sql ="SELECT * FROM `student` WHERE `id`=?";
+        $s = new Student();
+        foreach(DBx::GetData($sql, [$id]) as $r){
+            $s->Id = $r['id'];
+            $s->Firstname = $r['fisrtname'];
+            $s->Lastname = $r['lastname'];
+            $s->LRN = $r['lrn'];
+            $s->Gender = $r['sex'];
+            $s->DOB = $r['dib'];
+            $s->LRNStatus = $r['lrnstatus'];
+        }
+        return $s;
+    }
 }
