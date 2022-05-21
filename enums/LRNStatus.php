@@ -8,10 +8,10 @@ class Enum_LRNStatus{
     }
     public static function ParseStatus($id){
         if($id == '1'){
-            return 'Lock';
+            return 'checked';
         }
         if($id == '2'){
-            return 'Unlock';
+            return '';
         }
     }
 }
