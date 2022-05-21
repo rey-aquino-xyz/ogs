@@ -26,6 +26,17 @@ class AccountController
         return DBx::GetData($sql);
     }
 
+    public static function UpdatePwd($id, $newpwd){
+        $sql ="UPDATE account SET password=? WHERE id=?";
+        try {
+            DBx::ExecuteCommand($sql, [$newpwd, $id]);
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+            throw $th;
+        }
+    }
+
     public static function IsAuthenticate($username, $password)
     {
         if(DBx::GetRowCount("SELECT * FROM `account`  WHERE `username` =? AND `password` =?", [$username, $password]) > 0){
@@ -56,6 +67,7 @@ class AccountController
                 $a->Username = $r['username'];
                 $a->StudentId = $r['studentid'];
                 $a->AccountTypeId = $r['typeid'];
+                $a->Password = $r['password'];
             }
         }
         return $a;
