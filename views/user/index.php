@@ -1,5 +1,5 @@
 <?php include 'header.php' ?>
-    <div class="container col" id="admin-content">
-        <?php include 'my-info.php'; ?>
+    <div class="container" id="user-content">
+       
     </div>
 <?php include 'footer.php' ?>

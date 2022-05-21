@@ -58,7 +58,7 @@ class GradeController
     }
 
     public static function GetGrade($lrn, $gradelevelid, $strandid, $semesterid, $quarterid, $subjectid, $sy){
-        return Dbx::GetData("SELECT grade FROM grade WHERE lrn =? && gradelevelid=? && strandid=? && semesterid=? && quarterid=? && subjectid=? && sy=?", [
+        return Dbx::GetSingleData("SELECT grade FROM grade WHERE lrn =? && gradelevelid=? && strandid=? && semesterid=? && quarterid=? && subjectid=? && sy=?", [
             $lrn,
             $gradelevelid,
             $strandid,

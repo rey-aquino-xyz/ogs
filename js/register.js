@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     $("[name='register-form]").on('submit', function (e) {
         e.preventDefault();
-        alert("Saving");
         var form = new FormData(this);
         $.ajax({
             url: '../includes/register.php',

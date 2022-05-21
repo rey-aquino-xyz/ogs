@@ -49,5 +49,21 @@ class DBx extends DBConfig {
      return $data;
      $DBConnection = null;
     }
+    public static function GetSingleData($query, array $param = null) {
+     $config       = new DBConfig();
+     $DBConnection = $config->GetConnectionString();
+     $DBConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     $getData = $DBConnection->prepare($query);
+     if ($param != null):
+      $getData->execute($param);
+     else:
+      $getData->execute();
+     endif;
+     $data = $getData->fetchColumn();
+     return $data;
+     $DBConnection = null;
+    }
+
+
    }
 ?>
