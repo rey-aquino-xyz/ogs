@@ -17,8 +17,6 @@ AccountController::SeedAccount();
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/navbar.css">
-    <link rel="stylesheet" href="assets/form.css">
-
     <script type="application/javascript" src="/ogs/js/main.js"></script>
 
     <title>AMECI | Portal</title>

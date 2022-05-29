@@ -88,9 +88,6 @@
                     Already have account?<a href="login-view.php"> Sign In</a>
                 </label>
             </div>
-            <!--
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-            -->
         </form>
     </main>
     <br>
