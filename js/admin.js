@@ -10,7 +10,6 @@ $(document).ready(function () {
     $("[name ='myInfoLink']").on('click', function (e) {
         e.preventDefault();
         $("#admin-content").load("../../views/admin/account.php");
-
     })
 
     $("[name ='userslink']").on('click', function (e) {
@@ -18,7 +17,5 @@ $(document).ready(function () {
         $("#admin-content").load("../../views/admin/users.php");
 
     })
-
-
 
 });

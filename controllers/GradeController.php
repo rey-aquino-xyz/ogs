@@ -45,6 +45,9 @@ class GradeController
 
     }
 
+    public static function GetData(){
+        return Dbx::GetData("SELECT * FROM grade GROUP BY lrn");
+    }
     public static function Get($lrn){
         return DBx::GetData("SELECT * FROM grade WHERE lrn =? GROUP BY subjectid ", [$lrn]);
     }

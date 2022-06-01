@@ -24,6 +24,8 @@ if (isset($_SESSION['accountid'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>AMECI | Admin</title>
     <script src="../../js/admin.js"></script>
+    <script src="../../assets/simple-notify.min.js"></script>
+    <link rel="stylesheet" href="../../assets/simple-notify.min.css">
     <style>
         body {
             min-height: 100vh;
