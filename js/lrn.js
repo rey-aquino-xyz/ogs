@@ -10,15 +10,22 @@ $(document).ready(function () {
             data: { lrn: lrn.val(), pwd: pwd.val() },
             type: 'POST',
             success: function (r) {
+                pwd.removeClass("is-invalid");
+                lrn.removeClass("is-invalid");
+                lrnlock.style.display = "none";
+
                 console.log(r);
                 if (r == "ip") {
                     lrnlock.style.display = "block";
                 }
                 if (r == "invpwd") {
-                    $("#lrn-msg").html("Invalid Password");
+                    pwd.addClass("is-invalid");
+                    lrnlock.style.display = "block";
+                    //$("#lrn-msg").html("Invalid Password");
                 }
                 if (r == "lrnnull") {
-                    $("#lrn-msg").html("LRN does not exist");
+                    lrn.addClass("is-invalid");
+                    //$("#lrn-msg").html("LRN does not exist");
                 }
                 if (r == "pwdm") {
                     $("#grade-content").load('grade.php', { lrn: lrn.val() });
