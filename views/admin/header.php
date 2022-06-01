@@ -61,6 +61,9 @@ if (isset($_SESSION['accountid'])) {
                     <li>
                         <a href="#Files" id="fileslink" class="nav-link link-dark">Files</a>
                     </li>
+                    <li>
+                        <a href="#Users" name="userslink" class="nav-link link-dark">Users</a>
+                    </li>
                 </ul>
             </div>
             <a href="../../includes/logout.php" class="btn btn-danger">Sign Out</a>

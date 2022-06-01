@@ -13,6 +13,12 @@ $(document).ready(function () {
 
     })
 
+    $("[name ='userslink']").on('click', function (e) {
+        e.preventDefault();
+        $("#admin-content").load("../../views/admin/users.php");
+
+    })
+
 
 
 });
