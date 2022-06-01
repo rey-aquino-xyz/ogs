@@ -56,9 +56,33 @@ $(document).ready(function () {
             data: { exportexc: 'POST', id: id },
             type: 'POST',
             success: function (r) {
-                $("#admin-content").load("../../views/admin/files.php");
+                if(r=="t"){
+                    $("#admin-content").load("../../views/admin/files.php");
+                    pushNotify("Process File", "File has been saved to database.", "success");
+                }else{
+                    pushNotify("Process File", "Something went wrong", "error");
+                }
             }
         });
 
     });
+    function pushNotify(title, msg, status) {
+        new Notify({
+          status: status,
+          title: title,
+          text: msg,
+          effect: 'slide',
+          speed: 500,
+          customClass: null,
+          customIcon: null,
+          showIcon: true,
+          showCloseButton: false,
+          autoclose: true,
+          autotimeout: 3000,
+          gap: 20,
+          distance: 20,
+          type: 3,
+          position: 'top right'
+        })
+    }
 });

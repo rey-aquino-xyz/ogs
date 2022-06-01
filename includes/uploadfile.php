@@ -105,7 +105,14 @@ if(isset($_POST['exportexc'])){
             } else {
               $Grade->LRN = $elt[0];
               $Grade->Grade = $elt[2];
-              GradeController::Insert($Grade);
+              try {
+                if(GradeController::Insert($Grade)){
+                    echo "t";
+                }
+              } catch (\Throwable $th) {
+                  throw $th;
+              }
+              
             }
             $i++;
         }
